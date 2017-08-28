@@ -170,8 +170,19 @@
 		 * @return The value associated with the key.
 		 */
 		get: function get(key) {
+			return this.getWithDefault(key, null)
+		},
+
+		/**
+		 * Returns value with specified key, or defaultValue if there's no mapping for the key.
+		 * 
+		 * @param key - key with which the specified value is to be associated.
+		 * 
+		 * @return The value associated with the key or the defaultValue passed
+		 */
+		getWithDefault: function getWithDefault(key, defaultValue) {
 			var node = this._getNodes()[key];
-			var value = (node ? node.value : null);
+			var value = (node ? node.value : defaultValue);
 
 			return value;
 		},
