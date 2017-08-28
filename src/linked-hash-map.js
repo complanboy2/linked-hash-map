@@ -221,11 +221,26 @@
 		},
 
 		/**
+		 * Returns all entires {key, value} in an array.
+		 * 
+		 * @return An array containing all entries {key, value}.
+		 */
+		getAll: function getAll() {
+			var entries = [];
+
+			this.each(function(value, key) {
+				entries.push(key, value);
+			});
+
+			return entries;
+		},
+		
+		/**
 		 * Returns all values in an array.
 		 * 
 		 * @return An array containing all values.
 		 */
-		getAll: function getAll() {
+		getAllValues: function getAll() {
 			var values = [];
 
 			this.each(function(value) {
