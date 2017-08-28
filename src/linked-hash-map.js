@@ -349,7 +349,11 @@
 			var display = {};
 
 			this.each(function(value, key) {
-				display[key] = value;
+				if(value instanceof Object) {
+					display[key] = value.toString(beautify);
+				} else {
+					display[key] = value;
+				}
 			});
 
 			var space = null;
