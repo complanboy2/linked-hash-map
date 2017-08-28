@@ -273,10 +273,11 @@
 				// it must be the last, need to update
 				this.lastNode = existingNode.prev;
 			}
-			
-			if (existingNode.prev && existingNode.next) {
-				// link them
+			// link them			
+			if (existingNode.prev) {
 				existingNode.prev.next = existingNode.next;
+			}
+			if(existingNode.next) {
 				existingNode.next.prev = existingNode.prev;
 			}
 
